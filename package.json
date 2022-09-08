@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Chaimaa-as/Chaimaa-as.github.io#readme",
   "dependencies": {
-    "sass": "^1.54.5"
+    "sass": "^1.54.9"
   }
 }
