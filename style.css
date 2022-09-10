@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  max-width: 1200px;
+  max-width: 100%;
   /*mettre plutot width en 100%*/
   margin: 0 auto;
 }
@@ -67,7 +67,7 @@ button:hover {
 }
 
 /* HEADER */
-.main-page {
+.homepage {
   padding-top: 1rem;
   padding-bottom: 0.4rem;
   text-align: center;
@@ -88,7 +88,8 @@ button:hover {
 }
 
 main {
-  padding: 0rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
   margin-top: 2rem;
 }
 
@@ -151,7 +152,7 @@ a {
 
 /* RESEARCH SECTION */
 .research {
-  margin: 2rem;
+  margin: 6rem;
 }
 
 .research__steps ol {
