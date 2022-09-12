@@ -33,7 +33,10 @@ body {
 }
 
 h1 {
-  font-family: "Shrikhand", cursive; /* Logo + titre footer */
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.8rem;
 }
 
 h2 {
@@ -72,7 +75,7 @@ button:hover {
 }
 
 /* HEADER */
-.main-page {
+header {
   padding-top: 1rem;
   padding-bottom: 0.4rem;
   text-align: center;
@@ -81,14 +84,14 @@ button:hover {
   /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
 }
 
-.header__location {
+.rests__location {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #696969;
+  color: #383838;
   background-color: #EFEFEF;
 }
 
@@ -126,7 +129,7 @@ a {
   border-top: 16px solid #9356DC;
   border-right: 16px solid #FF79DA;
   border-bottom: 16px solid #99E2D0;
-  border-left: 16px solid #696969;
+  border-left: 16px solid #383838;
   animation: spin 3s infinite;
 }
 
@@ -146,24 +149,23 @@ a {
     transform: scale(0);
   }
 }
-.intro {
+.rests-xplor {
   text-align: center;
   background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
   padding-bottom: 4rem;
   padding-top: 1rem;
 }
-
-.intro__text p {
+.rests-xplor p {
   font-size: 1.3rem;
   font-weight: 350;
 }
 
 /* EXPLORE SECTION */
-.research {
+.rests-search {
   margin: 6rem;
 }
 
-.research__steps ol {
+.rests-search__steps ol {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -182,7 +184,7 @@ ol li:hover i {
   color: #9356DC;
 }
 
-.research__steps li {
+.rests-search__steps li {
   list-style-type: none;
   background-color: #F2F2F2;
   border-radius: 1.8rem;
@@ -193,7 +195,7 @@ ol li:hover i {
   align-items: center;
   gap: 0.6rem;
 }
-.research__steps li::before {
+.rests-search__steps li::before {
   counter-increment: section;
   content: counters(section, ".") " ";
   /* etape2 : On incrémente le compteur section */
@@ -210,8 +212,8 @@ ol li:hover i {
   justify-content: center;
 }
 
-.research__steps i {
-  color: #696969;
+.rests-search__steps i {
+  color: #383838;
   font-size: 1.3rem;
 }
 
@@ -220,22 +222,22 @@ li span {
   font-size: 1.2rem;
 }
 
-.research__steps .fa-solid {
+.rests-search__steps .fa-solid {
   margin-right: 0.5rem;
 }
 
 /* RESULTS SECTION */
-.results {
+.rests-results {
   background-color: #f2f2f2;
   padding-bottom: 1rem;
   border-radius: 2rem;
   margin: 2rem 0rem 2rem 0rem;
 }
-.results h2 {
+.rests-results h2 {
   padding-left: 1.5rem;
 }
 
-.results-cards {
+.rests-results-cards {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -244,11 +246,11 @@ li span {
   transition: all 100ms ease-in;
 }
 
-.result-card--new {
+.rest-card--featured {
   position: relative;
   display: block;
 }
-.result-card--new::before {
+.rest-card--featured::before {
   content: "Nouveau";
   position: absolute;
   height: 2rem;
@@ -263,7 +265,7 @@ li span {
   border-radius: 0.2rem;
 }
 
-.result-card {
+.rest-card {
   background-color: white;
   border-radius: 1.3rem;
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
@@ -272,18 +274,18 @@ li span {
   transition: all 100ms ease-in;
   margin-bottom: 2rem;
 }
-.result-card img {
+.rest-card img {
   width: 100%;
   height: 10rem;
   border-radius: 1.3rem 1.3rem 0rem 0rem;
   object-fit: cover;
 }
 
-.result-card:hover {
+.rest-card:hover {
   transform: scale(1.1);
 }
 
-.result-card__content {
+.rest-card__content {
   padding: 0.2rem 1rem;
   text-overflow: ellipsis;
   display: flex;
@@ -291,10 +293,10 @@ li span {
   justify-content: space-between;
   align-items: flex-start;
 }
-.result-card__content p {
+.rest-card__content p {
   margin-top: 0.2rem;
 }
-.result-card__content::before {
+.rest-card__content::before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -313,7 +315,7 @@ li span {
   opacity: 1;
   transition: all 200ms ease-in-out;
 }
-.result-card__content::after {
+.rest-card__content::after {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -333,23 +335,31 @@ li span {
   opacity: 0;
   transition: all 200ms ease-in-out;
 }
-.result-card__content:hover::after {
+.rest-card__content:hover::after {
   opacity: 1;
 }
 
 @media (max-width: 600px) {
-  .result-card {
+  .rest-card {
     width: 100%;
   }
-  .results {
+  .rests-results {
     border-radius: 0;
     box-shadow: none;
+    margin-bottom: 0;
+  }
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .rests-search {
+    margin: 1rem;
   }
 }
 /* FOOTER */
 footer {
   padding: 1rem;
-  background-color: #696969;
+  background-color: #383838;
   z-index: -1;
   border-radius: 2rem 2rem 0rem 0rem;
 }
@@ -429,7 +439,7 @@ nav ::before {
 .restaurant-container h2 {
   text-transform: uppercase;
   font-weight: 200;
-  color: #696969;
+  color: #383838;
   font-size: 1.3rem;
 }
 .restaurant-container h3 {

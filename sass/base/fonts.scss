@@ -1,8 +1,12 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
 h1{
-    font-family: 'Shrikhand', cursive;/* Logo + titre footer */
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.8rem;
 }
 h2{
     font-family: 'Roboto', sans-serif;

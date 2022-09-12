@@ -20,31 +20,31 @@
             <div class="spin LOADER__SPINNER"></div>
         </div>
 
-        <header class="main-page HOMEPAGE">
-            <a href="#" id="logo LOGO">
+        <header>
+            <a href="#" id="logo">
                 <div>
                     <img src="../Images/logo/ohmyfood.svg" alt="Logo OhMyFood"/>
                 </div>
             </a>
         </header>
         
-         <!-- SECTION 1 - RESTAURANTS PRESENTATION-->
-        <section class="header-section PRES-RESTS"> 
-            <div class="header__location PRES-RESTS__LOCATION">
-                <i class="fa-solid fa-location-dot LOCATION__ICON"></i>
+         <!-- S1 - CHOSEN LOCATION-->
+        <section> 
+            <div class="rests__location">
+                <i class="fa-solid fa-location-dot"></i>
                 <p>Paris, Belleville</p>
             </div>
         </section>
    
-        <!-- SECTION 2 - RESTAURANTS EXPLORATION-->
-        <section class="intro RESTS-XPLOR">
-            <div class="intro__text XPLOR__PRES">
-                <h2 class="XPLOR__TITLE">Réservez le menu qui vous convient</h2>
-                <p class="XPLOR__DESCRIPTION">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+        <!-- S2 - RESTAURANTS EXPLORATION-->
+        <section class="rests-xplor">
+            <div class="">
+                <h1 class="">Réservez le menu qui vous convient</h1>
+                <p class="">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
             </div>
-            <div class="intro__button RESTS-PRES__XPLOR__BUTTON">
+            <div class="xplor__button">
                 <button type="submit">
-                    <a href="#">
+                    <a href="#rests">
                         <span class="text-submit">Explorer nos restaurants</span>
                     </a>
                 </button>
@@ -52,12 +52,12 @@
         </section>
     
         <!-- SECTION 2 - RESTAURANTS ORDERING STEPS-->
-        <section class="research ORDERING-STEPS"> 
-            <div id="reserch__title ORDERING-STEPS__TITLE">
+        <section class="rests-search"> 
+            <div>
                 <h2>Fonctionnement</h2>
             </div>
 
-            <div class="research__steps ORDERING-STEPSsteps">
+            <div class="rests-search__steps">
                 <ol>
                     <li>
                         <i class="fa-solid fa-mobile-screen"></i>
@@ -77,47 +77,47 @@
 
         <main><!-- MAIN SECTION-->
             <!-- RESULTS-->
-            <section class="results">
-                <div class="results__title">
-                    <h2>Restaurants</h2>
+            <section class="rests-results">
+                <div class=""><!-- garder cette classe?-->
+                    <h2 id="rests">Restaurants</h2>
                 </div>
 
-                <div class="results-cards">
+                <div class="rests-results-cards">
 
-                    <div class="result-card">
-                        <a href="pages\page1-restaurant_La palette.html" class="result-card--new">
+                    <div class="rest-card">
+                        <a href="pages\page1-restaurant_La palette.html" class="rest-card--featured"> <!--en ajoutant "--featured" cela ajoute le badge "Nouveau" sur la carte-->
                             <img src="images\restaurants\jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo restaurant la palette">
-                            <div class="result-card__content">
+                            <div class="rest-card__content">
                                 <h3>La palette du goût</h3>
                                 <p>Ménilmontant</p>
                             </div>
                         </a>
                     </div>
 
-                    <div class="result-card">
-                        <a href="" class="result-card--new">
+                    <div class="rest-card">
+                        <a href="" class="rest-card--featured">
                             <img src="images\restaurants\louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photo restaurant la note enchantée">
-                            <div class="result-card__content">
+                            <div class="rest-card__content">
                                 <h3>La note enchantée</h3>
                                 <p>Charonne</p>
                             </div>
                         </a>
                     </div>
 
-                    <div class="result-card">
+                    <div class="rest-card">
                         <a href="" class="card">
                             <img src="images\restaurants\stil-u2Lp8tXIcjw-unsplash.jpg" alt="photo restaurant à la française">
-                            <div class="result-card__content">
+                            <div class="rest-card__content">
                                 <h3>À la française</h3>
                                 <p>Cité Rouge</p>
                             </div>
                         </a>
                     </div>
 
-                    <div class="result-card">
+                    <div class="rest-card">
                         <a href="" class="card">
                             <img src="images\restaurants\toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photo restaurant le délice des sens">
-                            <div class="result-card__content">
+                            <div class="rest-card__content">
                                 <h3>Le délice des sens</h3>
                                 <p>Folie-Méricourt</p>
                             </div>

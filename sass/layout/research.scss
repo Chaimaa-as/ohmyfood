@@ -1,15 +1,15 @@
 /* EXPLORE SECTION */
-.research{
+.rests-search{
     margin:6rem;
 }
-.research__steps ol{
+.rests-search__steps ol{
     display:flex;
     flex-wrap: wrap;
     gap:1rem;
     counter-reset: section; /* etape1 : On initialise le compteur à 0 */
     padding-left:0rem;
-
 }
+
 ol li{
     transition:all 100ms ease-in;
     &:hover{
@@ -18,11 +18,9 @@ ol li{
         i{
             color:$primary-color;
         }
-        
-// background-image: linear-gradient(to right bottom, rgba(242,242,242,1) 0%, rgba(147,86,220,0.2) 100%);
     }
 }
-.research__steps li{
+.rests-search__steps li{
     list-style-type: none;
     background-color: #F2F2F2;
     border-radius:1.8rem;
@@ -52,18 +50,14 @@ ol li{
 }
 
 
-.research__steps i{
+.rests-search__steps i{
     color:$dark-gray;
     font-size:1.3rem;
-
-
-
 }
 li span{
     font-weight:bold;
     font-size:1.2rem;
-
 }
-.research__steps .fa-solid{ 
+.rests-search__steps .fa-solid{ 
     margin-right:0.5rem;
 }
