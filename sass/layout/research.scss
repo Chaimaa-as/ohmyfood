@@ -14,8 +14,12 @@ ol li{
     transition:all 100ms ease-in;
     &:hover{
         transform:scale(1.1);
-        background: rgb(242,242,242);
-background-image: linear-gradient(to right bottom, rgba(242,242,242,1) 0%, rgba(147,86,220,0.2) 100%);
+        background:$light-purple;
+        i{
+            color:$primary-color;
+        }
+        
+// background-image: linear-gradient(to right bottom, rgba(242,242,242,1) 0%, rgba(147,86,220,0.2) 100%);
     }
 }
 .research__steps li{
@@ -49,9 +53,17 @@ background-image: linear-gradient(to right bottom, rgba(242,242,242,1) 0%, rgba(
 
 
 .research__steps i{
-    color:$dark-grey;
-}
+    color:$dark-gray;
+    font-size:1.3rem;
 
+
+
+}
+li span{
+    font-weight:bold;
+    font-size:1.2rem;
+
+}
 .research__steps .fa-solid{ 
     margin-right:0.5rem;
 }

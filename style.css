@@ -23,6 +23,11 @@ h2 {
   padding-top: 2rem;
 }
 
+/*gris : du + foncé au + clair*/
+/*dimgrey : gris mat*/
+/*gris Argile*/
+/*gris whitesmoke*/
+/*choisir quelle mediaquerie garder et ajuster tailles*/
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -46,7 +51,7 @@ footer h2 {
 button {
   border: none;
   border-radius: 2rem;
-  -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
   height: 4rem;
   width: 18rem;
   color: white;
@@ -71,7 +76,7 @@ button:hover {
   padding-top: 1rem;
   padding-bottom: 0.4rem;
   text-align: center;
-  -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
   position: relative;
   /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
 }
@@ -83,8 +88,8 @@ button:hover {
   gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #353535;
-  background-color: #f2f2f2;
+  color: #696969;
+  background-color: #EFEFEF;
 }
 
 main {
@@ -102,7 +107,7 @@ a {
   height: 100vh;
   position: fixed;
   inset: 0;
-  background-color: #f2f2f2;
+  background-color: #EFEFEF;
   border: 6px solid #FF79DA;
   z-index: 2;
   opacity: 1;
@@ -118,10 +123,10 @@ a {
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  border-top: 16px solid purple;
-  border-right: 16px solid pink;
-  border-bottom: 16px solid cyan;
-  border-left: 16px solid gray;
+  border-top: 16px solid #9356DC;
+  border-right: 16px solid #FF79DA;
+  border-bottom: 16px solid #99E2D0;
+  border-left: 16px solid #696969;
   animation: spin 3s infinite;
 }
 
@@ -143,6 +148,9 @@ a {
 }
 .intro {
   text-align: center;
+  background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
+  padding-bottom: 4rem;
+  padding-top: 1rem;
 }
 
 .intro__text p {
@@ -168,15 +176,17 @@ ol li {
 }
 ol li:hover {
   transform: scale(1.1);
-  background: rgb(242, 242, 242);
-  background-image: linear-gradient(to right bottom, rgb(242, 242, 242) 0%, rgba(147, 86, 220, 0.2) 100%);
+  background: #F4EEFB;
+}
+ol li:hover i {
+  color: #9356DC;
 }
 
 .research__steps li {
   list-style-type: none;
   background-color: #F2F2F2;
   border-radius: 1.8rem;
-  -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
   padding: 1rem;
   flex-grow: 1;
   display: flex;
@@ -201,7 +211,13 @@ ol li:hover {
 }
 
 .research__steps i {
-  color: #353535;
+  color: #696969;
+  font-size: 1.3rem;
+}
+
+li span {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .research__steps .fa-solid {
@@ -214,7 +230,6 @@ ol li:hover {
   padding-bottom: 1rem;
   border-radius: 2rem;
   margin: 2rem 0rem 2rem 0rem;
-  -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
 }
 .results h2 {
   padding-left: 1.5rem;
@@ -334,7 +349,7 @@ ol li:hover {
 /* FOOTER */
 footer {
   padding: 1rem;
-  background-color: #353535;
+  background-color: #696969;
   z-index: -1;
   border-radius: 2rem 2rem 0rem 0rem;
 }
@@ -405,7 +420,7 @@ nav ::before {
 .restaurant-container {
   margin-top: -2rem;
   z-index: 1;
-  background-color: #f2f2f2;
+  background-color: #EFEFEF;
   padding: 3rem 2rem;
   border-radius: 2rem 2rem 0rem 0rem;
   width: 100%;
@@ -414,7 +429,7 @@ nav ::before {
 .restaurant-container h2 {
   text-transform: uppercase;
   font-weight: 200;
-  color: #353535;
+  color: #696969;
   font-size: 1.3rem;
 }
 .restaurant-container h3 {
@@ -570,7 +585,7 @@ nav ::before {
 .desert_card {
   background-color: white;
   border-radius: 1rem;
-  -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
   display: flex;
   cursor: pointer;
   box-sizing: border-box;

@@ -38,7 +38,7 @@ nav{
 .restaurant-container{
     margin-top:-2rem;
     z-index:1;
-    background-color: $light-grey;
+    background-color: $light-gray;
     padding: 3rem 2rem;
     border-radius:2rem 2rem 0rem 0rem;
     width:100%;
@@ -47,7 +47,7 @@ nav{
     & h2{
         text-transform: uppercase;
         font-weight:200;
-        color:$dark-grey;
+        color:$dark-gray;
         font-size: 1.3rem;
     }
     & h3{
