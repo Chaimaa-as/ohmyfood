@@ -1,24 +1,25 @@
 // HEADER
-.restaurant-header{
+nav a{
     margin-top:1rem;
     margin-bottom:0.6rem;
-    & ::before{
+    &::before{
         display: inline-block;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         font:--fa-font-regular;
         position: absolute;
         left: 0;
-        top: 10%;
         transform: translateY(-50%);
         width: 1.25em;
         text-align: center;
         width:4rem;
-        height:1rem;
+        height:2rem;
         font-size:2rem;
         font-family: "Font Awesome 5 Free"; 
         font-weight: 900;
+        top:2rem;
         content:"\f060";
+        cursor:pointer;
     }
 }
 
@@ -31,16 +32,17 @@
     z-index:-1;
 }
 
-
-// SECTION_GLOBAL CONTAINER
 .restaurant-menu{
-    margin-top:-2rem;
+    margin-top:-3rem;
     z-index:1;
     background-color: $light-gray;
     padding: 3rem 2rem;
     border-radius:2rem 2rem 0rem 0rem;
-    width:100%;
-    margin-bottom:-2rem;
+    & .restaurant__title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     & h1{
         padding-left:0.4rem;
         position:relative;
@@ -48,6 +50,7 @@
         align-items: center;
         gap:0.8rem;
         font-size:1.6rem;
+        font-family: 'Shrikhand', cursive;
     }
     & h2{
         text-transform: uppercase;
@@ -66,7 +69,10 @@
     }
 }
 
-.restaurant h1{
+.restaurant__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     &::before{
         display:inline-block;
         font-style: normal;
@@ -76,7 +82,7 @@
         font-family: "Font Awesome 5 Free"; 
         font-weight: 400; 
         content:"\f004";
-        font-size:1.4rem;
+        font-size:1.8rem;
         position:absolute;
         right:0.6rem;
         transform:translate(-50%);
@@ -84,9 +90,8 @@
         background-clip:text;
         -webkit-background-clip: text;
         opacity:1;
-        transition: all 200ms ease-in-out;   
-
-        }
+        transition: all 200ms ease-in-out;  
+        } 
         &::after{
             display:inline-block;
             font-style: normal;
@@ -96,7 +101,7 @@
             font-family: "Font Awesome 5 Free"; 
             font-weight: 900; 
             content:"\f004";
-            font-size:1.4rem;
+            font-size:1.8rem;
             position:absolute;
             right:0.6rem;
             transform:translate(-50%);
@@ -105,24 +110,26 @@
             background-clip:text;
             -webkit-background-clip: text;
             opacity:0;
-            transition: all 200ms ease-in-out;    
+            transition: all 200ms ease-in-out; 
+            cursor:pointer;   
             }
-                &:hover::after{
-                    opacity:1;
+            &:hover::after{
+                opacity:1;
                 }
+            }
+        
+.restaurant__categories{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
 }
-// UNDERLINE
+
 .menu-category h2::after{
     content:"";
     display:block;
     width:4rem;
     height:2px;
     background-color: $tertiary-color;
-}
-
-.restaurant_button{
-    margin-top: 3rem;
-    text-align: center;
 }
 
 @keyframes fade-in{
@@ -136,6 +143,7 @@
         opacity:1;
     }
 }
+
 .menu-cards{
     display: flex;
     flex-wrap: wrap;
@@ -146,6 +154,7 @@
     text-overflow: ellipsis;
     white-space:nowrap;
 }
+
 .menu__item{
     background-color: white;
     border-radius:1rem;
@@ -157,10 +166,16 @@
     overflow:hidden;
     text-overflow: ellipsis;
     white-space:nowrap;
-    min-width:40%;
     animation:fade-in 3s ease-in;
     animation-fill-mode: both;
     transition:all 1s ease-in-out;
+    min-width: 40%;
+    @media(max-width:$breakpoint-mobile){
+        width:100%;
+    }
+    @media(max-width:$breakpoint-tablet){
+        min-width:42%;
+    }
     @for $i from 1 through 3{
         &:nth-child(#{$i}){
             animation-delay: #{$i*0.5s};
@@ -171,7 +186,6 @@
         .item--check{
             margin-right:0;
             & i{
-        
                 transform: rotate(1turn);
                 transition: all 500ms;
  
@@ -224,22 +238,5 @@
         display: flex;
         justify-content: center;
         transition:all 500ms ease-in-out;
-    }
-}
-
-@media (max-width:$breakpoint-mobile){
-    .starter_card, 
-    .main-course_card, 
-    .desert_card{
-        width:100%;
-    }
-}
-
-@media(max-width:$breakpoint-tablet){
-    .menu__item{
-        min-width:40%;
-    }
-    footer{
-        border-radius:0;
     }
 }

@@ -9,10 +9,16 @@
     font-size:1.2rem;
     font-weight: 450;
     padding: 0.7rem 1.4rem;
-    margin-left: 4rem;
-    margin-right: 3rem;
+    margin-left: 3rem;
+    margin-right: 4rem;
+    margin-top:2rem;
+    text-align:center;
     background: rgb(255,121,217);
     background-image: linear-gradient(to right bottom, rgba(255,121,217,1) 0%, rgba(147,86,220,1) 100%);
+    & span{
+        font-size:1rem;
+
+    }
     &:hover{
         transform: scale(1.1);
         transition:all 200ms ease-in;
