@@ -1,24 +1,24 @@
 /* BUTTONS */
-button{
+.xplor__button{
     border:none;
     border-radius: 2rem;
     @include card-shadow;
-    height:4rem;
-    width: 18rem;
+    height:3rem;
+    width: 14rem;
     color:white;
     font-size:1.2rem;
-    font-weight: 400;
-    padding:1rem 2rem;
+    font-weight: 450;
+    padding: 0.7rem 1.4rem;
+    margin-left: 4rem;
+    margin-right: 3rem;
     background: rgb(255,121,217);
     background-image: linear-gradient(to right bottom, rgba(255,121,217,1) 0%, rgba(147,86,220,1) 100%);
+    &:hover{
+        transform: scale(1.1);
+        transition:all 200ms ease-in;
+        background: rgb(255,121,217);
+        background-image: linear-gradient(to right bottom, rgba(255,121,217,0.5) 0%, rgba(147,86,220,0.5) 100%);
+        cursor:pointer;
+        -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsl(0deg 0% 0% / 40%);
+    }
 }
-
-button:hover{
-    transform: scale(1.1);
-    transition:all 200ms ease-in;
-    background: rgb(255,121,217);
-    background-image: linear-gradient(to right bottom, rgba(255,121,217,0.5) 0%, rgba(147,86,220,0.5) 100%);
-    cursor:pointer;
-    -webkit-box-shadow: -1px 5px 10px 0px rgba(138,134,134,0.75);
-}
-

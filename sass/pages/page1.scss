@@ -1,9 +1,7 @@
 // HEADER
-nav{
+.restaurant-header{
     margin-top:1rem;
     margin-bottom:0.6rem;
-    position: relative;
-    text-align:center;
     & ::before{
         display: inline-block;
         text-rendering: auto;
@@ -35,19 +33,26 @@ nav{
 
 
 // SECTION_GLOBAL CONTAINER
-.restaurant-container{
+.restaurant-menu{
     margin-top:-2rem;
     z-index:1;
-    background-color: $light-grey;
+    background-color: $light-gray;
     padding: 3rem 2rem;
     border-radius:2rem 2rem 0rem 0rem;
     width:100%;
     margin-bottom:-2rem;
-
+    & h1{
+        padding-left:0.4rem;
+        position:relative;
+        display:flex;
+        align-items: center;
+        gap:0.8rem;
+        font-size:1.6rem;
+    }
     & h2{
         text-transform: uppercase;
         font-weight:200;
-        color:$dark-grey;
+        color:$dark-gray;
         font-size: 1.3rem;
     }
     & h3{
@@ -56,20 +61,12 @@ nav{
         margin-bottom: 0.3rem;
     }
     & p{
-        font-size:0.9rem;
         margin-top:0.3rem;
         margin-bottom: 0.3rem;
     }
 }
 
 .restaurant h1{
-    padding-left:0.4rem;
-    position:relative;
-    display:flex;
-    align-items: center;
-    gap:0.8rem;
-    font-size:1.6rem;
-
     &::before{
         display:inline-block;
         font-style: normal;
@@ -114,23 +111,8 @@ nav{
                     opacity:1;
                 }
 }
-
-    // CYAN UNDERLINE
-.starters h2::after{
-    content:"";
-    display:block;
-    width:4rem;
-    height:2px;
-    background-color: $tertiary-color;
-}
-.main-courses h2::after{
-    content:"";
-    display:block;
-    width:4rem;
-    height:2px;
-    background-color: $tertiary-color;
-}
-.deserts h2::after{
+// UNDERLINE
+.menu-category h2::after{
     content:"";
     display:block;
     width:4rem;
@@ -143,68 +125,6 @@ nav{
     text-align: center;
 }
 
-
-
-// CARDS
-.starters_cards,
-.main-courses_cards,
-.deserts_cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap:0.8rem;
-    min-width:20%;
-
-    overflow:hidden;
-    text-overflow: ellipsis;
-    white-space:nowrap;
-
-
-
-
-
-}
-.starter_content,
-.main-course_content,
-.desert_content{
-    padding:1rem;
-    overflow:hidden;
-    text-overflow: ellipsis;
-    white-space:nowrap;
-    min-width:30%;
-    max-width:70%;
-
-    & h3, & p{
-        padding:0;
-        margin:0;
-        overflow:hidden;
-        text-overflow: ellipsis;
-        white-space:nowrap;
-   
-    }
-}
-
-.starter_price,
-.main-course_price,
-.desert_price{
-    font-size:0.9rem;
-    margin-left:auto;
-    font-weight: bold;
-    display:flex;
-    align-items: flex-end;
-    padding:1rem;
-    min-width:10%;
-}
-
-
-
-
-
-
-
-
-
-
 @keyframes fade-in{
     0%{
         transform:translateY(50%);
@@ -216,9 +136,17 @@ nav{
         opacity:1;
     }
 }
-.starter_card, 
-.main-course_card, 
-.desert_card{
+.menu-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:0.8rem;
+    min-width:20%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.menu__item{
     background-color: white;
     border-radius:1rem;
     @include card-shadow;
@@ -240,7 +168,7 @@ nav{
         }
     }
     &:hover 
-        .starter--check{
+        .item--check{
             margin-right:0;
             & i{
         
@@ -249,19 +177,35 @@ nav{
  
             }
         }
-    &:hover 
-    .main-course--check{
-        margin-right:0;
-    }
-    &:hover 
-    .desert--check{
-        margin-right:0;
+}
+
+.item__content{
+    padding:1rem;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    min-width:30%;
+    max-width:70%;
+    & h3, & p{
+        padding:0;
+        margin:0;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
     }
 }
 
-.starter--check,
-.main-course--check,
-.desert--check{
+.item__price{
+    font-size:0.9rem;
+    margin-left:auto;
+    font-weight: bold;
+    display:flex;
+    align-items: flex-end;
+    padding:1rem;
+    min-width:10%;
+}
+
+.item--check{
     display: flex;
     width: 4rem;
     color: #99E2D0;
@@ -283,7 +227,6 @@ nav{
     }
 }
 
-// MEDIA QUERIES
 @media (max-width:$breakpoint-mobile){
     .starter_card, 
     .main-course_card, 
@@ -292,27 +235,11 @@ nav{
     }
 }
 
-@media(max-width:$breakpoint-min-tablet){
-    .starter_card, 
-    .main-course_card, 
-    .desert_card{
-        width:100%;
-
-    }
-}
-
 @media(max-width:$breakpoint-tablet){
-    .starter_card, 
-    .main-course_card, 
-    .desert_card{
+    .menu__item{
         min-width:40%;
-
     }
     footer{
         border-radius:0;
     }
 }
-
-
-
-
