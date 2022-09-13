@@ -1,10 +1,16 @@
-main{
-    padding-left: 6rem;
-    padding-right: 6rem;
-    margin-top: 2rem;
-}
+// main{
+//     padding-left: 6rem;
+//     padding-right: 6rem;
+//     margin-top: 2rem;
+// }
 
 @media (max-width:$breakpoint-mobile){
+    main{
+        padding-left:0;
+        padding-right:0;
+    }
+}
+@media (max-width:900px){
     main{
         padding-left:0;
         padding-right:0;

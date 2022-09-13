@@ -1,32 +1,42 @@
 /* RESTAURANTS ORDERING STEPS */
 .rests-search{
-    margin:6rem;
-}
+    padding-left:2rem;
+    padding-right:2rem;
+    @media (max-width:$breakpoint-mobile){
+        .rests-search{
+            padding-left:1rem;
+            padding-right:1rem;
+        }
+        & h2{
+            padding-left:1.5rem;
+        }
+    }
 
 .search__steps{
     & ol{
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap:1rem;
-        counter-reset: section; /* etape1 : On initialise le compteur à 0 */
-        padding-left:0rem;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1rem;
+    counter-reset: section; /* etape1 : On initialise le compteur à 0 */
+    padding-left:0rem;
     }
-    & li{
-        transition:all 100ms ease-in;
-        min-width:50%;
-        max-width: 50%;
-        &:hover{
-            transform:scale(1.1);
-            background:$light-purple;
-            i{
-                color:$primary-color;
-            }
-        }
+    & i{
+        color:$dark-gray;
+        font-size:1.3rem;
+    }
+    & .fa-solid{ 
+        margin-right:0.5rem;
+    }
+    & span{
+        font-weight:bold;
+        font-size:1rem;
     }
 }
 
 .search__steps li{
+    transition:all 100ms ease-in;
+    max-width: 80%;
     list-style-type: none;
     background-color: #F2F2F2;
     border-radius:1.8rem;
@@ -36,7 +46,12 @@
     display: flex;
     align-items: center;
     gap:0.6rem;
-
+    @media (max-width:$breakpoint-mobile){
+        .search__steps li{
+        max-width:100%;
+        background-color: green;
+        }
+    }
     &::before{
         counter-increment: section; /* etape2 : On incrémente le compteur section */
         content: counters(section,".") " ";/* etape 3 : On affiche le compteur*/
@@ -50,36 +65,14 @@
         margin-left:-1.5rem;
         display:flex;
         justify-content: center;
-    }
-}
-
-
-.search__steps i{
-    color:$dark-gray;
-    font-size:1.3rem;
-}
-li span{
-    font-weight:bold;
-    font-size:1.2rem;
-}
-.search__steps .fa-solid{ 
-    margin-right:0.5rem;
-}
-@media (max-width:$breakpoint-mobile){
-    .rests-search{
-        margin:1rem;
-        padding-left:1rem;
-        padding-right:1rem;
-    }
-    .search__steps li{
-        max-width:100%;
-    }
-}
-@media (max-width:$breakpoint-tablet){
-    .rests-search{
-        margin:1rem;
-    }
-    .search__steps li{
-        max-width:100%;
+        }
+        &:hover{
+            transform:scale(1.1);
+            cursor: pointer;
+            background:$light-purple;
+            i{
+                color:$primary-color;
+            }
+        }
     }
 }

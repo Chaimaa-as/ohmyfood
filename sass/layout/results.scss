@@ -4,6 +4,9 @@
     padding-bottom: 1rem;
     border-radius: 2rem;
     margin:2rem 0rem 2rem 0rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    margin-top: 2rem;
     & h2{
         padding-left:1.5rem;
     }
@@ -19,7 +22,7 @@
     }
 
 
-.rest-card--featured{
+.rest-card--new{
     position: relative;
     display:block;
         &::before{
@@ -51,6 +54,8 @@
         height:10rem;
         border-radius: 1.3rem 1.3rem 0rem 0rem;
         object-fit: cover;
+        object-position:center;
+        /* pour le choix de la partie à zoomer */
     }
 }
 .rest-card:hover{
@@ -69,12 +74,12 @@
         }
     }
 
-.heart{
+.rest__heart{
     width:2rem;
     height:2rem;
     border:1px solid red;
     position: absolute;
-    left: 80%;
+    left: 90%;
     bottom: 10%;
     &::before{
         display:block;
