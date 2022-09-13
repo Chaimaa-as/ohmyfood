@@ -68,12 +68,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-
     & p{
         margin-top:0.2rem;
         margin-bottom:0;
         }
     }
+    
 .rest-card__container{
     display: flex;
     justify-content: space-between;
@@ -82,7 +82,7 @@
     width:2rem;
     height:2rem;
     border:1px solid red;
-    left: 90%;
+    left: 80%;
     bottom: 10%;
     position:absolute;
     &::before{

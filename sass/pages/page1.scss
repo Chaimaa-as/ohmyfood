@@ -73,6 +73,9 @@ nav a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.rest__heart{
     &::before{
         display:inline-block;
         font-style: normal;
@@ -90,8 +93,8 @@ nav a{
         background-clip:text;
         -webkit-background-clip: text;
         opacity:1;
-        transition: all 200ms ease-in-out;  
-        } 
+        transition: all 200ms ease-in-out; 
+        }
         &::after{
             display:inline-block;
             font-style: normal;
@@ -111,13 +114,13 @@ nav a{
             -webkit-background-clip: text;
             opacity:0;
             transition: all 200ms ease-in-out; 
-            cursor:pointer;   
+            cursor:pointer; 
             }
             &:hover::after{
                 opacity:1;
                 }
-            }
-        
+}
+         
 .restaurant__categories{
     display:flex;
     flex-direction:column;
@@ -182,16 +185,15 @@ nav a{
             transition:all 1s ease-in-out;
         }
     }
-    &:hover 
+    &:hover{
         .item--check{
             margin-right:0;
             & i{
                 transform: rotate(1turn);
                 transition: all 500ms;
- 
             }
         }
-}
+}}
 
 .item__content{
     padding:1rem;
@@ -238,5 +240,4 @@ nav a{
         display: flex;
         justify-content: center;
         transition:all 500ms ease-in-out;
-    }
-}
+    }}

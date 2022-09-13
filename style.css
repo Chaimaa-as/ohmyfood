@@ -1,9 +1,8 @@
 @charset "UTF-8";
 /*gris : du + foncé au + clair*/
-/*dimgrey : gris mat*/
 /*gris Argile*/
 /*gris whitesmoke*/
-/*choisir quelle mediaquerie garder et ajuster tailles*/
+/*choisir et ajuster tailles*/
 /* GENERAL */
 * {
   box-sizing: border-box;
@@ -61,7 +60,7 @@ p {
     margin-bottom: 0;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   main {
     padding-left: 0;
     padding-right: 0;
@@ -230,7 +229,7 @@ main {
 }
 .rests-search .search__steps li {
   transition: all 100ms ease-in;
-  max-width: 80%;
+  min-width: 30%;
   list-style-type: none;
   background-color: #F2F2F2;
   border-radius: 1.8rem;
@@ -243,7 +242,13 @@ main {
 }
 @media (max-width: 700px) {
   .rests-search .search__steps li .search__steps li {
-    max-width: 100%;
+    width: 100%;
+    background-color: green;
+  }
+}
+@media (max-width: 1000px) {
+  .rests-search .search__steps li .search__steps li {
+    width: 100%;
     background-color: green;
   }
 }
@@ -352,7 +357,7 @@ main {
   width: 2rem;
   height: 2rem;
   border: 1px solid red;
-  left: 90%;
+  left: 80%;
   bottom: 10%;
   position: absolute;
 }
@@ -407,7 +412,7 @@ main {
     padding-right: 1rem;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .rest-card {
     width: 100%;
   }
@@ -535,7 +540,8 @@ nav a::before {
   align-items: center;
   justify-content: space-between;
 }
-.restaurant__title::before {
+
+.rest__heart::before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -554,7 +560,7 @@ nav a::before {
   opacity: 1;
   transition: all 200ms ease-in-out;
 }
-.restaurant__title::after {
+.rest__heart::after {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -575,7 +581,7 @@ nav a::before {
   transition: all 200ms ease-in-out;
   cursor: pointer;
 }
-.restaurant__title:hover::after {
+.rest__heart:hover::after {
   opacity: 1;
 }
 
@@ -635,7 +641,7 @@ nav a::before {
     width: 100%;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .menu__item {
     min-width: 42%;
   }

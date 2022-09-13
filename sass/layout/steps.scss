@@ -36,7 +36,7 @@
 
 .search__steps li{
     transition:all 100ms ease-in;
-    max-width: 80%;
+    min-width: 30%;
     list-style-type: none;
     background-color: #F2F2F2;
     border-radius:1.8rem;
@@ -48,7 +48,13 @@
     gap:0.6rem;
     @media (max-width:$breakpoint-mobile){
         .search__steps li{
-        max-width:100%;
+        width:100%;
+        background-color: green;
+        }
+    }
+    @media (max-width:$breakpoint-tablet){
+        .search__steps li{
+        width:100%;
         background-color: green;
         }
     }
