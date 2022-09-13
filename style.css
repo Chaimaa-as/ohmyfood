@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/*gris : du + foncé au + clair*/
+/*dimgrey : gris mat*/
+/*gris Argile*/
+/*gris whitesmoke*/
+/*choisir quelle mediaquerie garder et ajuster tailles*/
 /* GENERAL */
 * {
   box-sizing: border-box;
@@ -8,27 +13,15 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   max-width: 100%;
   /*mettre plutot width en 100%*/
   margin: 0 auto;
-}
-
-h3 {
-  margin: 0;
-}
-
-h2 {
-  margin-bottom: 1rem;
-  padding-top: 2rem;
-}
-
-/*gris : du + foncé au + clair*/
-/*dimgrey : gris mat*/
-/*gris Argile*/
-/*gris whitesmoke*/
-/*choisir quelle mediaquerie garder et ajuster tailles*/
-body {
   font-family: "Roboto", sans-serif;
 }
 
@@ -44,12 +37,37 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.6rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
 }
 
 footer h2 {
   font-family: "Shrikhand", cursive;
 }
 
+h3 {
+  margin: 0;
+}
+
+p {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 900px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+}
 /* BUTTONS */
 button {
   border: none;
@@ -72,38 +90,6 @@ button:hover {
   background-image: linear-gradient(to right bottom, rgba(255, 121, 217, 0.5) 0%, rgba(147, 86, 220, 0.5) 100%);
   cursor: pointer;
   -webkit-box-shadow: -1px 5px 10px 0px rgba(138, 134, 134, 0.75);
-}
-
-/* HEADER */
-header {
-  padding-top: 1rem;
-  padding-bottom: 0.4rem;
-  text-align: center;
-  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
-  position: relative;
-  /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
-}
-
-.rests__location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #383838;
-  background-color: #EFEFEF;
-}
-
-main {
-  padding-left: 6rem;
-  padding-right: 6rem;
-  margin-top: 2rem;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 .loader {
@@ -149,42 +135,78 @@ a {
     transform: scale(0);
   }
 }
+/* HEADER */
+header {
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
+  text-align: center;
+  position: relative;
+  /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
+}
+
+.homepage {
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+}
+
+.rests__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #383838;
+  background-color: #EFEFEF;
+}
+
+main {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .rests-xplor {
   text-align: center;
   background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
   padding-bottom: 4rem;
   padding-top: 1rem;
-}
-.rests-xplor p {
-  font-size: 1.3rem;
-  font-weight: 350;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
-/* EXPLORE SECTION */
+/* RESTAURANTS ORDERING STEPS */
 .rests-search {
   margin: 6rem;
 }
 
-.rests-search__steps ol {
+.search__steps ol {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   counter-reset: section; /* etape1 : On initialise le compteur à 0 */
   padding-left: 0rem;
 }
-
-ol li {
+.search__steps li {
   transition: all 100ms ease-in;
+  min-width: 50%;
+  max-width: 50%;
 }
-ol li:hover {
+.search__steps li:hover {
   transform: scale(1.1);
   background: #F4EEFB;
 }
-ol li:hover i {
+.search__steps li:hover i {
   color: #9356DC;
 }
 
-.rests-search__steps li {
+.search__steps li {
   list-style-type: none;
   background-color: #F2F2F2;
   border-radius: 1.8rem;
@@ -195,11 +217,9 @@ ol li:hover i {
   align-items: center;
   gap: 0.6rem;
 }
-.rests-search__steps li::before {
-  counter-increment: section;
-  content: counters(section, ".") " ";
-  /* etape2 : On incrémente le compteur section */
-  /* etape 3 : On affiche le compteur*/
+.search__steps li::before {
+  counter-increment: section; /* etape2 : On incrémente le compteur section */
+  content: counters(section, ".") " "; /* etape 3 : On affiche le compteur*/
   border: 1px solid white;
   border-radius: 50%;
   height: 1rem;
@@ -212,7 +232,7 @@ ol li:hover i {
   justify-content: center;
 }
 
-.rests-search__steps i {
+.search__steps i {
   color: #383838;
   font-size: 1.3rem;
 }
@@ -222,10 +242,28 @@ li span {
   font-size: 1.2rem;
 }
 
-.rests-search__steps .fa-solid {
+.search__steps .fa-solid {
   margin-right: 0.5rem;
 }
 
+@media (max-width: 700px) {
+  .rests-search {
+    margin: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .search__steps li {
+    max-width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .rests-search {
+    margin: 1rem;
+  }
+  .search__steps li {
+    max-width: 100%;
+  }
+}
 /* RESULTS SECTION */
 .rests-results {
   background-color: #f2f2f2;
@@ -296,27 +334,32 @@ li span {
 .rest-card__content p {
   margin-top: 0.2rem;
 }
-.rest-card__content::before {
-  display: inline-block;
+
+.heart {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid red;
+  position: absolute;
+  left: 80%;
+  bottom: 10%;
+}
+.heart::before {
+  display: block;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
-  font-weight: 400;
   content: "\f004";
-  font-size: 2rem;
-  position: absolute;
+  font-size: 1.8rem;
   right: 1rem;
-  transform: translate(-50%);
   color: inherit;
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 1;
-  transition: all 200ms ease-in-out;
 }
-.rest-card__content::after {
-  display: inline-block;
+.heart::after {
+  display: block;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -324,22 +367,34 @@ li span {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f004";
-  font-size: 2rem;
-  position: absolute;
+  font-size: 1.8rem;
   right: 1rem;
-  transform: translate(-50%);
   color: transparent;
   background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
   transition: all 200ms ease-in-out;
+  transform: translateY(-100%);
+  cursor: pointer;
 }
-.rest-card__content:hover::after {
+.heart:hover::after {
   opacity: 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  .rest-card {
+    width: 100%;
+  }
+  .rests-results {
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 900px) {
   .rest-card {
     width: 100%;
   }
@@ -348,26 +403,17 @@ li span {
     box-shadow: none;
     margin-bottom: 0;
   }
-  main {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .rests-search {
-    margin: 1rem;
-  }
 }
-/* FOOTER */
 footer {
   padding: 1rem;
   background-color: #383838;
   z-index: -1;
   border-radius: 2rem 2rem 0rem 0rem;
 }
-
-.main-footer {
-  border-radius: 0;
+footer h2 {
+  padding: 0;
+  font-weight: 300;
 }
-
 footer li {
   list-style: none;
   color: white;
@@ -379,27 +425,18 @@ footer li {
   align-items: center;
   gap: 1rem;
 }
-
-.footer_text p {
+.footer-bloc i {
+  width: 0.6rem;
+}
+.footer-bloc p {
   margin: 0rem;
 }
 
-.footer_icon {
-  width: 0.6rem;
-}
-
-footer h2 {
-  padding: 0;
-  font-weight: 300;
-}
-
-nav {
-  margin-top: 1rem;
+.restaurant-header {
   margin-bottom: 0.6rem;
-  position: relative;
-  text-align: center;
+  margin-bottom: 0.6rem;
 }
-nav ::before {
+.restaurant-header ::before {
   display: inline-block;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -674,13 +711,6 @@ nav ::before {
   transition: all 500ms ease-in-out;
 }
 
-@media (max-width: 600px) {
-  .starter_card,
-.main-course_card,
-.desert_card {
-    width: 100%;
-  }
-}
 @media (max-width: 700px) {
   .starter_card,
 .main-course_card,

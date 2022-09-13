@@ -3,9 +3,13 @@ header{
     padding-top:1rem;
     padding-bottom:0.4rem;
     text-align: center;
-    @include card-shadow;
+    // @include card-shadow;
     position: relative;
     /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
+}
+
+.homepage{
+    @include card-shadow;
 }
 
 .rests__location{

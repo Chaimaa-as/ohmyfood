@@ -1,9 +1,7 @@
 // HEADER
-nav{
-    margin-top:1rem;
+.restaurant-header{
     margin-bottom:0.6rem;
-    position: relative;
-    text-align:center;
+    margin-bottom:0.6rem;
     & ::before{
         display: inline-block;
         text-rendering: auto;
@@ -289,15 +287,6 @@ nav{
     .main-course_card, 
     .desert_card{
         width:100%;
-    }
-}
-
-@media(max-width:$breakpoint-min-tablet){
-    .starter_card, 
-    .main-course_card, 
-    .desert_card{
-        width:100%;
-
     }
 }
 
