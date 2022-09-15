@@ -105,6 +105,50 @@ p {
     opacity: 1;
   }
 }
+.rest__heart::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 1.8rem;
+  position: absolute;
+  right: 2rem;
+  transform: translate(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+.rest__heart::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 1.8rem;
+  position: absolute;
+  right: 2rem;
+  transform: translate(-50%);
+  color: transparent;
+  background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.rest__heart:hover::after {
+  opacity: 1;
+}
+
 .loader {
   height: 100vh;
   position: fixed;
@@ -148,139 +192,98 @@ p {
     transform: scale(0);
   }
 }
-/* HEADER */
-header {
-  padding-top: 1rem;
-  padding-bottom: 0.4rem;
-  text-align: center;
-  position: relative;
-  /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
-}
-
-.homepage {
+.menu__item {
+  background-color: white;
+  border-radius: 1rem;
   -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
-}
-
-.rests__location {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #383838;
-  background-color: #EFEFEF;
-}
-
-main {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
-
-@media (max-width: 700px) {
-  main {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media (max-width: 900px) {
-  main {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-.rests-xplor {
-  text-align: center;
-  background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
-  padding: 4rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.rests-xplor p {
-  font-weight: 350;
-  font-size: 1.2rem;
-}
-
-/* RESTAURANTS ORDERING STEPS */
-.rests-search {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  animation: fade-in 3s ease-in;
+  animation-fill-mode: both;
+  transition: all 1s ease-in-out;
+  min-width: 40%;
 }
 @media (max-width: 700px) {
-  .rests-search .rests-search {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .rests-search h2 {
-    padding-left: 1.5rem;
-  }
-}
-.rests-search .search__steps ol {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  counter-reset: section; /* etape1 : On initialise le compteur à 0 */
-  padding-left: 0rem;
-}
-.rests-search .search__steps i {
-  color: #383838;
-  font-size: 1.3rem;
-}
-.rests-search .search__steps .fa-solid {
-  margin-right: 0.5rem;
-}
-.rests-search .search__steps span {
-  font-weight: bold;
-  font-size: 1rem;
-}
-.rests-search .search__steps li {
-  transition: all 100ms ease-in;
-  min-width: 30%;
-  list-style-type: none;
-  background-color: #F2F2F2;
-  border-radius: 1.8rem;
-  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
-  padding: 1rem;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-@media (max-width: 700px) {
-  .rests-search .search__steps li .search__steps li {
+  .menu__item {
     width: 100%;
-    background-color: green;
   }
 }
 @media (max-width: 1000px) {
-  .rests-search .search__steps li .search__steps li {
-    width: 100%;
-    background-color: green;
+  .menu__item {
+    min-width: 42%;
   }
 }
-.rests-search .search__steps li::before {
-  counter-increment: section; /* etape2 : On incrémente le compteur section */
-  content: counters(section, ".") " "; /* etape 3 : On affiche le compteur*/
-  border: 1px solid white;
+.menu__item:nth-child(1) {
+  animation-delay: 0.5s;
+  transition: all 1s ease-in-out;
+}
+.menu__item:nth-child(2) {
+  animation-delay: 1s;
+  transition: all 1s ease-in-out;
+}
+.menu__item:nth-child(3) {
+  animation-delay: 1.5s;
+  transition: all 1s ease-in-out;
+}
+.menu__item:hover .item--check {
+  margin-right: 0;
+}
+.menu__item:hover .item--check i {
+  transform: rotate(1turn);
+  transition: all 500ms;
+}
+
+.item__content {
+  padding: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 30%;
+  max-width: 70%;
+}
+.item__content h3, .item__content p {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item__price {
+  font-size: 0.9rem;
+  margin-left: auto;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  min-width: 10%;
+}
+
+.item--check {
+  display: flex;
+  width: 4rem;
+  color: #99E2D0;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  border-radius: 0rem 1rem 1rem 0rem;
+  margin-right: -4rem;
+  overflow: hidden;
+  transition: all 500ms;
+}
+.item--check i {
   border-radius: 50%;
-  height: 1rem;
-  width: 1rem;
-  background-color: #9356DC;
-  color: white;
-  padding: 0.4rem;
-  margin-left: -1.5rem;
+  color: #99E2D0;
+  background-color: white;
+  width: 1.1rem;
   display: flex;
   justify-content: center;
-}
-.rests-search .search__steps li:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-  background: #F4EEFB;
-}
-.rests-search .search__steps li:hover i {
-  color: #9356DC;
+  transition: all 500ms ease-in-out;
 }
 
 /* RESULTS SECTION */
@@ -430,6 +433,141 @@ main {
     margin-bottom: 0;
   }
 }
+/* RESTAURANTS ORDERING STEPS */
+.rests-search {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media (max-width: 700px) {
+  .rests-search .rests-search {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .rests-search h2 {
+    padding-left: 1.5rem;
+  }
+}
+.rests-search .search__steps ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  counter-reset: section; /* etape1 : On initialise le compteur à 0 */
+  padding-left: 0rem;
+}
+.rests-search .search__steps i {
+  color: #383838;
+  font-size: 1.3rem;
+}
+.rests-search .search__steps .fa-solid {
+  margin-right: 0.5rem;
+}
+.rests-search .search__steps span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.rests-search .search__steps li {
+  transition: all 100ms ease-in;
+  min-width: 30%;
+  list-style-type: none;
+  background-color: #F2F2F2;
+  border-radius: 1.8rem;
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+@media (max-width: 700px) {
+  .rests-search .search__steps li .search__steps li {
+    width: 100%;
+    background-color: green;
+  }
+}
+@media (max-width: 1000px) {
+  .rests-search .search__steps li .search__steps li {
+    width: 100%;
+    background-color: green;
+  }
+}
+.rests-search .search__steps li::before {
+  counter-increment: section; /* etape2 : On incrémente le compteur section */
+  content: counters(section, ".") " "; /* etape 3 : On affiche le compteur*/
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background-color: #9356DC;
+  color: white;
+  padding: 0.4rem;
+  margin-left: -1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.rests-search .search__steps li:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background: #F4EEFB;
+}
+.rests-search .search__steps li:hover i {
+  color: #9356DC;
+}
+
+.rests-xplor {
+  text-align: center;
+  background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rests-xplor p {
+  font-weight: 350;
+  font-size: 1.2rem;
+}
+
+/* HEADER */
+header {
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
+  text-align: center;
+  position: relative;
+  /* relative = naturelle si je ne mets pas cette instruction je perds ma shadow sur la box */
+}
+
+.homepage {
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+}
+
+.rests__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #383838;
+  background-color: #EFEFEF;
+}
+
+main {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 900px) {
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 footer {
   padding: 1rem;
   background-color: #383838;
@@ -549,50 +687,6 @@ nav a::before {
   justify-content: space-between;
 }
 
-.rest__heart::before {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  content: "\f004";
-  font-size: 1.8rem;
-  position: absolute;
-  right: 2rem;
-  transform: translate(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-}
-.rest__heart::after {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f004";
-  font-size: 1.8rem;
-  position: absolute;
-  right: 2rem;
-  transform: translate(-50%);
-  color: transparent;
-  background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
-}
-.rest__heart:hover::after {
-  opacity: 1;
-}
-
 .restaurant__categories {
   display: flex;
   flex-direction: column;
@@ -626,100 +720,6 @@ nav a::before {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.menu__item {
-  background-color: white;
-  border-radius: 1rem;
-  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
-  display: flex;
-  cursor: pointer;
-  box-sizing: border-box;
-  margin: 1rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  animation: fade-in 3s ease-in;
-  animation-fill-mode: both;
-  transition: all 1s ease-in-out;
-  min-width: 40%;
-}
-@media (max-width: 700px) {
-  .menu__item {
-    width: 100%;
-  }
-}
-@media (max-width: 1000px) {
-  .menu__item {
-    min-width: 42%;
-  }
-}
-.menu__item:nth-child(1) {
-  animation-delay: 0.5s;
-  transition: all 1s ease-in-out;
-}
-.menu__item:nth-child(2) {
-  animation-delay: 1s;
-  transition: all 1s ease-in-out;
-}
-.menu__item:nth-child(3) {
-  animation-delay: 1.5s;
-  transition: all 1s ease-in-out;
-}
-.menu__item:hover .item--check {
-  margin-right: 0;
-}
-.menu__item:hover .item--check i {
-  transform: rotate(1turn);
-  transition: all 500ms;
-}
-
-.item__content {
-  padding: 1rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 30%;
-  max-width: 70%;
-}
-.item__content h3, .item__content p {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.item__price {
-  font-size: 0.9rem;
-  margin-left: auto;
-  font-weight: bold;
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem;
-  min-width: 10%;
-}
-
-.item--check {
-  display: flex;
-  width: 4rem;
-  color: #99E2D0;
-  justify-content: center;
-  align-items: center;
-  background-color: #99E2D0;
-  border-radius: 0rem 1rem 1rem 0rem;
-  margin-right: -4rem;
-  overflow: hidden;
-  transition: all 500ms;
-}
-.item--check i {
-  border-radius: 50%;
-  color: #99E2D0;
-  background-color: white;
-  width: 1.1rem;
-  display: flex;
-  justify-content: center;
-  transition: all 500ms ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
