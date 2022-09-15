@@ -2,12 +2,14 @@
 @import "sass/base/general";
 @import "sass/utils/mixin.scss";
 @import "sass/composants/buttons";
-@import "sass/layout/loader.scss";
+@import "sass/composants/heart";
+@import "sass/composants/loader";
+@import "sass/composants/menu-item";
+@import "sass/composants/results";
+@import "sass/composants/steps";
+@import "sass/composants/xplor";
 @import "sass/layout/header";
 @import "sass/layout/main";
-@import "sass/layout/xplor";
-@import "sass/layout/steps";
-@import "sass/layout/results";
 @import "sass/layout/footer";
 @import "sass/pages/page1.scss";
 

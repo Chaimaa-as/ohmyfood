@@ -7,9 +7,6 @@
     padding-left: 6rem;
     padding-right: 6rem;
     margin-top: 2rem;
-    & h2{
-        // padding-left:1.5rem;
-    }
 }
 
 .rests-results-cards{
@@ -81,7 +78,6 @@
     & .rest__heart{
     width:2rem;
     height:2rem;
-    border:1px solid red;
     left: 80%;
     bottom: 10%;
     position:absolute;
@@ -94,7 +90,7 @@
         font-family: "Font Awesome 5 Free"; 
         content:"\f004";
         font-size:1.8rem;
-        right:1rem;
+        right:1.2rem;
         color:inherit;
         background-clip:text;
         -webkit-background-clip: text;
@@ -110,7 +106,7 @@
             font-weight: 900; 
             content:"\f004";
             font-size:1.8rem;
-            right:1rem;
+            right:1.2rem;
             color:transparent;
             background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
             background-clip:text;
