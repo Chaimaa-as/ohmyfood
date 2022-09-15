@@ -97,6 +97,14 @@ p {
   -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.4);
 }
 
+@keyframes heart-filling {
+  0% {
+    opacity: 0;
+  }
+  85%, 100% {
+    opacity: 1;
+  }
+}
 .loader {
   height: 100vh;
   position: fixed;
@@ -285,6 +293,7 @@ main {
   padding-right: 6rem;
   margin-top: 2rem;
 }
+
 .rests-results-cards {
   display: flex;
   gap: 1rem;
@@ -356,7 +365,6 @@ main {
 .rest-card__container .rest__heart {
   width: 2rem;
   height: 2rem;
-  border: 1px solid red;
   left: 80%;
   bottom: 10%;
   position: absolute;
@@ -370,7 +378,7 @@ main {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
   font-size: 1.8rem;
-  right: 1rem;
+  right: 1.2rem;
   color: inherit;
   background-clip: text;
   -webkit-background-clip: text;
@@ -386,7 +394,7 @@ main {
   font-weight: 900;
   content: "\f004";
   font-size: 1.8rem;
-  right: 1rem;
+  right: 1.2rem;
   color: transparent;
   background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
   background-clip: text;
@@ -552,7 +560,7 @@ nav a::before {
   content: "\f004";
   font-size: 1.8rem;
   position: absolute;
-  right: 0.6rem;
+  right: 2rem;
   transform: translate(-50%);
   color: inherit;
   background-clip: text;
@@ -571,7 +579,7 @@ nav a::before {
   content: "\f004";
   font-size: 1.8rem;
   position: absolute;
-  right: 0.6rem;
+  right: 2rem;
   transform: translate(-50%);
   color: transparent;
   background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
