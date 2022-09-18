@@ -4,11 +4,21 @@
     padding-bottom: 1rem;
     border-radius: 2rem;
     margin:2rem 0rem 2rem 0rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    // padding-left: 6rem;
+    // padding-right: 6rem;
     margin-top: 2rem;
+    @media (max-width:$breakpoint-mobile){
+ 
+            padding-left:2rem;
+            padding-right:2rem;
+        
+    }
 }
 
+
+.rests-results h2{
+    padding-left:2rem;
+}
 .rests-results-cards{
     display:flex;
     gap:1rem;
@@ -71,55 +81,7 @@
         }
     }
     
-.rest-card__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    & .rest__heart{
-    width:2rem;
-    height:2rem;
-    left: 80%;
-    bottom: 10%;
-    position:absolute;
-    &::before{
-        display:block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-family: "Font Awesome 5 Free"; 
-        content:"\f004";
-        font-size:1.8rem;
-        right:1.2rem;
-        color:inherit;
-        background-clip:text;
-        -webkit-background-clip: text;
-        opacity:1;
-        }
-        &::after{
-            display:block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font-family: "Font Awesome 5 Free"; 
-            font-weight: 900; 
-            content:"\f004";
-            font-size:1.8rem;
-            right:1.2rem;
-            color:transparent;
-            background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
-            background-clip:text;
-            -webkit-background-clip: text;
-            opacity:0;
-            transition: all 200ms ease-in-out;  
-            transform: translateY(-100%); 
-            cursor: pointer;
-            } 
-            &:hover::after{
-                opacity:1;
-                }  
-    }}
+
    
 @media(max-width:$breakpoint-mobile){
     .rest-card{

@@ -40,7 +40,7 @@ nav a{
     border-radius:2rem 2rem 0rem 0rem;
     & .restaurant__title{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
     }
     & h1{
@@ -51,6 +51,7 @@ nav a{
         gap:0.8rem;
         font-size:1.6rem;
         font-family: 'Shrikhand', cursive;
+        margin:0;
     }
     & h2{
         text-transform: uppercase;
@@ -68,15 +69,7 @@ nav a{
         margin-bottom: 0.3rem;
     }
 }
-
-.restaurant__title{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-         
+        
 .restaurant__categories{
     display:flex;
     flex-direction:column;
