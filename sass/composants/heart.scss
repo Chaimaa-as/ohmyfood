@@ -2,12 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    & .rest__heart{
-    width:2rem;
-    height:2rem;
-    left: 100%;
-    bottom: 10%;   
-    position: absolute;                                                   
+}
+.heart{
     &::before{
         display:block;
         font-style: normal;
@@ -25,35 +21,43 @@
         background-clip:text;
         -webkit-background-clip: text;
         opacity:1;
-        // transition: all 200ms ease-in-out; 
-        }
-        &::after{
-            display:block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font-family: "Font Awesome 5 Free"; 
-            font-weight: 900; 
-            content:"\f004";
-            font-size:1.8rem;
-            position:absolute;
-            right:2rem;
-            transform:translate(-50%);
-            color:transparent;
-            background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
-            background-clip:text;
-            -webkit-background-clip: text;
-            opacity:0;
-            cursor: pointer;
-            animation:heart-filling;
-            transition:all 300ms ease-in;
-            // animation:heart-filling 3s;
-            } 
-            &:hover::after{
-                opacity:1;
-            }  
+        transition: all 200ms ease-in-out; 
     }
+    &::after{
+        display:block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900; 
+        content:"\f004";
+        font-size:1.8rem;
+        position:absolute;
+        right:2rem;
+        transform:translate(-50%);
+        color:transparent;
+        background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+        background-clip:text;
+        -webkit-background-clip: text;
+        opacity:0;
+        transition: all 200ms ease-in-out; 
+        cursor: pointer;
+        animation:heart-filling;
+    }
+    &:hover::after{
+        opacity:1;
+    }
+}
+.rest__heart{
+    width:2rem;
+    height:2rem;
+    left: 100%;
+    bottom: 10%;   
+    position: absolute;
+}  
+.rest-page__heart{
+    width:2rem;
 }
 
 @keyframes heart-filling{
@@ -68,7 +72,6 @@
         transform: scaleY(.4);
     }
     46% {
-        
         transform: scaleY(.81);
     }
     70%{

@@ -14,7 +14,7 @@ nav a{
         text-align: center;
         width:4rem;
         height:2rem;
-        font-size:2rem;
+        font-size:1.5rem;
         font-family: "Font Awesome 5 Free"; 
         font-weight: 900;
         top:2rem;
@@ -26,7 +26,7 @@ nav a{
 .restaurant-pic img{
     display:block;
     width:100%;
-    height:50vh;
+    height:40vh;
     object-fit: cover;
     position:relative;
     z-index:-1;
@@ -38,31 +38,38 @@ nav a{
     background-color: $light-gray;
     padding: 3rem 2rem;
     border-radius:2rem 2rem 0rem 0rem;
+    // width:80%;
+    // margin-left:auto;
+    // margin-right:auto;
+    @media (max-width:$breakpoint-mobile){
+        width:100%;
+        transform:translate(0%);
+        border-radius:2rem 2rem 0rem 0rem;
+        margin-bottom:0;
+    }
     & .restaurant__title{
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
     }
     & h1{
         padding-left:0.4rem;
-        position:relative;
-        display:flex;
-        align-items: center;
-        gap:0.8rem;
-        font-size:1.6rem;
+        // position:relative;
+        // display:flex;
+        // align-items: center;
+        // gap:0.8rem;
+        font-size:1.5rem;
         font-family: 'Shrikhand', cursive;
         margin:0;
     }
     & h2{
         text-transform: uppercase;
-        font-weight:200;
+        font-weight:300;
         color:$dark-gray;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     & h3{
         font-size:1rem;
-        margin-top:0.3rem;
-        margin-bottom: 0.3rem;
+        // margin-top:0.3rem;
+        // margin-bottom: 0.3rem;
     }
     & p{
         margin-top:0.3rem;
@@ -70,16 +77,30 @@ nav a{
     }
 }
         
-.restaurant__categories{
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-}
+// .restaurant__categories{
+//     display:flex;
+//     flex-direction:column;
+//     align-items: center;
+// }
 
-.menu-category h2::after{
+.starters h2::after{
     content:"";
     display:block;
-    width:4rem;
+    width:3rem;
+    height:2px;
+    background-color: $tertiary-color;
+}
+.main-courses h2::after{
+    content:"";
+    display:block;
+    width:3rem;
+    height:2px;
+    background-color: $tertiary-color;
+}
+.deserts h2::after{
+    content:"";
+    display:block;
+    width:3rem;
     height:2px;
     background-color: $tertiary-color;
 }
@@ -99,11 +120,9 @@ nav a{
 .menu-cards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap:0.8rem;
-    min-width:20%;
-    overflow:hidden;
-    text-overflow: ellipsis;
-    white-space:nowrap;
+    // justify-content: space-around;
+    gap:1rem;
+    // min-width:20%;
+
 }
 

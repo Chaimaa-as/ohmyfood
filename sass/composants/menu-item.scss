@@ -4,20 +4,20 @@
     @include card-shadow;
     display:flex;
     cursor:pointer;
-    box-sizing:border-box;
-    margin:1rem;
+    // box-sizing:border-box;
+    margin:0.4rem;
     overflow:hidden;
-    text-overflow: ellipsis;
-    white-space:nowrap;
+    // text-overflow: ellipsis;
+    // white-space:nowrap;
     animation:fade-in 3s ease-in;
     animation-fill-mode: both;
     transition:all 1s ease-in-out;
-    min-width: 40%;
+    width:30%;
     @media(max-width:$breakpoint-mobile){
         width:100%;
     }
     @media(max-width:$breakpoint-tablet){
-        min-width:42%;
+        // min-width:42%;
     }
     @for $i from 1 through 3{
         &:nth-child(#{$i}){
@@ -40,8 +40,9 @@
     overflow:hidden;
     text-overflow: ellipsis;
     white-space:nowrap;
-    min-width:30%;
-    max-width:70%;
+    width:60%;
+    // min-width:30%;
+    // max-width:70%;
     & h3, & p{
         padding:0;
         margin:0;
