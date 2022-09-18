@@ -1,25 +1,41 @@
 /* RESTAURANTS ORDERING STEPS */
 .rests-search{
-    padding-left:2rem;
-    padding-right:2rem;
+    // padding-left:2rem;
+    // padding-right:2rem;
     @media (max-width:$breakpoint-mobile){
-        .rests-search{
-            padding-left:1rem;
-            padding-right:1rem;
-        }
-        & h2{
-            padding-left:1.5rem;
-        }
+        padding-left:2rem;
+        padding-right:2rem;
     }
+    @media (max-width:$breakpoint-tablet){
+        padding-left:2rem;
+        padding-right:2rem;
+    }
+}
+
+.rests-search h2{
+    padding-left:2rem;
+    @media (max-width:$breakpoint-mobile){
+        padding-left:0rem;
+    }
+    @media (max-width:$breakpoint-tablet){
+        
+    }
+}
 
 .search__steps{
     & ol{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap:1rem;
+    gap:2rem;
     counter-reset: section; /* etape1 : On initialise le compteur à 0 */
     padding-left:0rem;
+    @media (max-width:$breakpoint-mobile){
+        gap:1rem;
+    }
+    @media (max-width:$breakpoint-tablet){
+        gap:1rem;
+    }
     }
     & i{
         color:$dark-gray;
@@ -81,4 +97,3 @@
             }
         }
     }
-}
