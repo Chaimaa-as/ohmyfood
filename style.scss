@@ -6,40 +6,44 @@
 @import "sass/composants/loader";
 @import "sass/composants/menu-item";
 @import "sass/composants/results";
-@import "sass/composants/steps";
+@import "sass/composants/booking-steps";
 @import "sass/composants/xplor";
 @import "sass/layout/header";
 @import "sass/layout/main";
 @import "sass/layout/footer";
-@import "sass/pages/page1.scss";
+@import "sass/pages/pages.scss";
 
 /**
  * CONTENTS
  *
- * SETTINGS
- * Global...............Globally-available variables and config.
  *
- * TOOLS
- * Mixins...............Useful mixins.
- *
- * GENERIC
- * Normalize.css........A level playing field.
+ * BASE/GENERAL
  * Box-sizing...........Better default `box-sizing`.
- *
- * BASE
  * Headings.............H1–H6 styles.
  *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
+ * COMPOSANTS
+ * Booking steps........Numbered booking steps.
+ * Buttons..............Button styling & animation.
+ * Heart................Heart animation.
+ * Loader...............The main page loader spinner.
+ * Menu-item............Cards styling & animations.
+ * Results..............Restaurants slides styling.
+ * Xplor................General Presentation.
  *
- * COMPONENTS
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- * Buttons..............Button elements.
+ * LAYOUT
+ * Header...............The main page header.
+ * Main.................The main section.
+ * Footer...............The main page footer.
  *
- * TRUMPS
- * Text.................Text helpers.
- */
+ * PAGES
+ * Pages................Restaurants pages styling.
+ *
+ * UTILS
+ * Mixins...............Useful mixins.
+ * Variables............Globally-available variables
+ *
+ *
+ **/
 
 
 
