@@ -1,12 +1,33 @@
-.rests-xplor{
-    text-align: center;
+// <!-- EXPLORATION SECTION -- S1 -->
+.xplor{
     background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
-    padding:4rem 1rem;
+    padding-bottom: 4rem;
+}
+
+.xplor__location{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+    font-size:1.2rem;
+    font-weight: bold;
+    color:$dark-gray;
+    background-color: $light-gray;
+}
+
+.xplor__title{
+    text-align: center;
+    padding:4rem 1.4rem 0rem 1.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    & p{
-        font-weight:350;
-        font-size:1.2rem;
-    }
+}
+
+.xplor__title h1{
+    margin:0;
+}
+
+.xplor__title p{
+    font-weight:350;
+    font-size:1.1rem;
 }

@@ -403,60 +403,50 @@ p {
     margin-bottom: 0;
   }
 }
-/* RESTAURANTS ORDERING STEPS */
+/* BOOKING STEPS */
 @media (max-width: 700px) {
-  .rests-search {
+  .booking {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 @media (max-width: 900px) {
-  .rests-search {
+  .booking {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-.rests-search h2 {
+.booking h2 {
   padding-left: 2rem;
 }
 @media (max-width: 700px) {
-  .rests-search h2 {
+  .booking h2 {
     padding-left: 0rem;
   }
 }
-.search__steps ol {
+
+.booking__steps ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  counter-reset: section; /* etape1 : On initialise le compteur à 0 */
+  counter-reset: section;
   padding-left: 0rem;
 }
 @media (max-width: 700px) {
-  .search__steps ol {
+  .booking__steps {
     gap: 1rem;
   }
 }
 @media (max-width: 900px) {
-  .search__steps ol {
+  .booking__steps {
     gap: 1rem;
   }
 }
-.search__steps i {
-  color: #383838;
-  font-size: 1.3rem;
-}
-.search__steps .fa-solid {
-  margin-right: 0.5rem;
-}
-.search__steps span {
-  font-weight: bold;
-  font-size: 1rem;
-}
 
-.search__steps li {
-  transition: all 100ms ease-in;
+.booking__steps li {
+  transition: all 200ms ease-in;
   min-width: 30%;
   list-style-type: none;
   background-color: #F2F2F2;
@@ -469,20 +459,18 @@ p {
   gap: 0.6rem;
 }
 @media (max-width: 700px) {
-  .search__steps li .search__steps li {
+  .booking__steps li {
     width: 100%;
-    background-color: green;
   }
 }
 @media (max-width: 900px) {
-  .search__steps li .search__steps li {
+  .booking__steps li {
     width: 100%;
-    background-color: green;
   }
 }
-.search__steps li::before {
-  counter-increment: section; /* etape2 : On incrémente le compteur section */
-  content: counters(section, ".") " "; /* etape 3 : On affiche le compteur*/
+.booking__steps li::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
   border: 1px solid white;
   border-radius: 50%;
   height: 1rem;
@@ -494,26 +482,59 @@ p {
   display: flex;
   justify-content: center;
 }
-.search__steps li:hover {
+.booking__steps li:hover {
   transform: scale(1.1);
   cursor: pointer;
   background: #F4EEFB;
 }
-.search__steps li:hover i {
+.booking__steps li:hover i {
   color: #9356DC;
 }
 
-.rests-xplor {
-  text-align: center;
+.booking__steps i {
+  color: #383838;
+  font-size: 1.3rem;
+}
+.booking__steps i .fa-solid {
+  margin-right: 0.5rem;
+}
+
+.booking__steps span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.xplor {
   background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
-  padding: 4rem 1rem;
+  padding-bottom: 4rem;
+}
+
+.xplor__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #383838;
+  background-color: #EFEFEF;
+}
+
+.xplor__title {
+  text-align: center;
+  padding: 4rem 1.4rem 0rem 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.rests-xplor p {
+
+.xplor__title h1 {
+  margin: 0;
+}
+
+.xplor__title p {
   font-weight: 350;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 /* HEADER */
@@ -527,17 +548,6 @@ header {
 
 .homepage {
   -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
-}
-
-.rests__location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #383838;
-  background-color: #EFEFEF;
 }
 
 main {
@@ -611,7 +621,7 @@ nav a::before {
   display: inline-block;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  font: --fa-font-regular;
+  font-family: "Font Awesome 5 Free";
   position: absolute;
   left: 0;
   transform: translateY(-50%);
@@ -717,29 +727,33 @@ nav a::before {
 /**
  * CONTENTS
  *
- * SETTINGS
- * Global...............Globally-available variables and config.
  *
- * TOOLS
- * Mixins...............Useful mixins.
- *
- * GENERIC
- * Normalize.css........A level playing field.
+ * BASE/GENERAL
  * Box-sizing...........Better default `box-sizing`.
- *
- * BASE
  * Headings.............H1–H6 styles.
  *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
+ * COMPOSANTS
+ * Booking steps........Numbered booking steps.
+ * Buttons..............Button styling & animation.
+ * Heart................Heart animation.
+ * Loader...............The main page loader spinner.
+ * Menu-item............Cards styling & animations.
+ * Results..............Restaurants slides styling.
+ * Xplor................General Presentation.
  *
- * COMPONENTS
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- * Buttons..............Button elements.
+ * LAYOUT
+ * Header...............The main page header.
+ * Main.................The main section.
+ * Footer...............The main page footer.
  *
- * TRUMPS
- * Text.................Text helpers.
- */
+ * PAGES
+ * Pages................Restaurants pages styling.
+ *
+ * UTILS
+ * Mixins...............Useful mixins.
+ * Variables............Globally-available variables
+ *
+ *
+ **/
 
 /*# sourceMappingURL=style.css.map */

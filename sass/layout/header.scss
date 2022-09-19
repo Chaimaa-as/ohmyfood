@@ -12,13 +12,3 @@ header{
     @include card-shadow;
 }
 
-.rests__location{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    gap:0.5rem;
-    font-size:1.2rem;
-    font-weight: bold;
-    color:$dark-gray;
-    background-color: $light-gray;
-}

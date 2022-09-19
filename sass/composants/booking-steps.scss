@@ -1,7 +1,5 @@
-/* RESTAURANTS ORDERING STEPS */
-.rests-search{
-    // padding-left:2rem;
-    // padding-right:2rem;
+/* BOOKING STEPS */
+.booking{
     @media (max-width:$breakpoint-mobile){
         padding-left:2rem;
         padding-right:2rem;
@@ -12,46 +10,32 @@
     }
 }
 
-.rests-search h2{
+.booking h2{
     padding-left:2rem;
     @media (max-width:$breakpoint-mobile){
         padding-left:0rem;
     }
-    @media (max-width:$breakpoint-tablet){
-        
-    }
 }
 
-.search__steps{
+.booking__steps{
     & ol{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
     gap:2rem;
-    counter-reset: section; /* etape1 : On initialise le compteur à 0 */
+    counter-reset: section; 
     padding-left:0rem;
+    }
     @media (max-width:$breakpoint-mobile){
-        gap:1rem;
+            gap:1rem;
     }
     @media (max-width:$breakpoint-tablet){
-        gap:1rem;
-    }
-    }
-    & i{
-        color:$dark-gray;
-        font-size:1.3rem;
-    }
-    & .fa-solid{ 
-        margin-right:0.5rem;
-    }
-    & span{
-        font-weight:bold;
-        font-size:1rem;
+            gap:1rem;
     }
 }
 
-.search__steps li{
-    transition:all 100ms ease-in;
+.booking__steps li{
+    transition:all 200ms ease-in;
     min-width: 30%;
     list-style-type: none;
     background-color: #F2F2F2;
@@ -63,20 +47,14 @@
     align-items: center;
     gap:0.6rem;
     @media (max-width:$breakpoint-mobile){
-        .search__steps li{
         width:100%;
-        background-color: green;
-        }
     }
     @media (max-width:$breakpoint-tablet){
-        .search__steps li{
         width:100%;
-        background-color: green;
-        }
     }
     &::before{
-        counter-increment: section; /* etape2 : On incrémente le compteur section */
-        content: counters(section,".") " ";/* etape 3 : On affiche le compteur*/
+        counter-increment: section; 
+        content: counters(section,".") " ";
         border:1px solid white;
         border-radius: 50%;
         height:1rem;
@@ -97,3 +75,16 @@
             }
         }
     }
+
+.booking__steps i{
+    color:$dark-gray;
+    font-size:1.3rem;
+    .fa-solid{ 
+        margin-right:0.5rem;
+    }
+}
+
+.booking__steps span{
+    font-weight:bold;
+    font-size:1rem;
+}
