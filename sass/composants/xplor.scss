@@ -2,12 +2,7 @@
 .xplor{
     background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
     padding-bottom: 4rem;
-    @media (max-width:$breakpoint-mobile){
-           padding-left:0;
-           padding-right:0; 
-           margin-bottom:0;
-        }
-    @media (max-width:$breakpoint-tablet){
+    @media (max-width:$breakpoint-mobile),(max-width:$breakpoint-tablet){
            padding-left:0;
            padding-right:0; 
            margin-bottom:0;
@@ -15,9 +10,8 @@
 }
 
 .xplor__location{
-    display:flex;
+    @include flex-center;
     justify-content: center;
-    align-items: center;
     gap:0.5rem;
     font-size:1.2rem;
     font-weight: bold;
@@ -28,13 +22,15 @@
 .xplor__title{
     text-align: center;
     padding:4rem 1.4rem 0rem 1.4rem;
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    align-items: center;
 }
 
 .xplor__title h1{
     margin:0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2rem;
 }
 
 .xplor__title p{

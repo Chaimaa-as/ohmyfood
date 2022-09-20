@@ -38,9 +38,6 @@ nav a{
     background-color: $light-gray;
     padding: 3rem 2rem;
     border-radius:2rem 2rem 0rem 0rem;
-    // width:80%;
-    // margin-left:auto;
-    // margin-right:auto;
     @media (max-width:$breakpoint-mobile){
         width:100%;
         transform:translate(0%);
@@ -52,10 +49,6 @@ nav a{
     }
     & h1{
         padding-left:0.4rem;
-        // position:relative;
-        // display:flex;
-        // align-items: center;
-        // gap:0.8rem;
         font-size:1.5rem;
         font-family: 'Shrikhand', cursive;
         margin:0;
@@ -68,35 +61,15 @@ nav a{
     }
     & h3{
         font-size:1rem;
-        // margin-top:0.3rem;
-        // margin-bottom: 0.3rem;
     }
     & p{
         margin-top:0.3rem;
         margin-bottom: 0.3rem;
     }
 }
-        
-// .restaurant__categories{
-//     display:flex;
-//     flex-direction:column;
-//     align-items: center;
-// }
 
-.starters h2::after{
-    content:"";
-    display:block;
-    width:3rem;
-    height:2px;
-    background-color: $tertiary-color;
-}
-.main-courses h2::after{
-    content:"";
-    display:block;
-    width:3rem;
-    height:2px;
-    background-color: $tertiary-color;
-}
+.starters h2::after,
+.main-courses h2::after,
 .deserts h2::after{
     content:"";
     display:block;
@@ -105,24 +78,9 @@ nav a{
     background-color: $tertiary-color;
 }
 
-@keyframes fade-in{
-    0%{
-        transform:translateY(50%);
-        opacity:0;
-    } 
-    // effet de fondu pultot que scale
-    100%{
-        transform:translateY(0);
-        opacity:1;
-    }
-}
 
 .menu-cards{
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-around;
     gap:1rem;
-    // min-width:20%;
-
 }
-

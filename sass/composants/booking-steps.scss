@@ -1,12 +1,7 @@
-/* BOOKING STEPS */
 .booking{
-    padding-left: 6rem;
-    padding-right: 6rem;
-    @media (max-width:$breakpoint-mobile){
-        padding-left:2rem;
-        padding-right:2rem;
-    }
-    @media (max-width:$breakpoint-tablet){
+    padding-left:6rem;
+    padding-right:6rem;
+    @media (max-width:$breakpoint-mobile),(max-width:$breakpoint-tablet){
         padding-left:2rem;
         padding-right:2rem;
     }
@@ -20,32 +15,26 @@
     & ol{
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content:space-between;
     gap:2rem;
     counter-reset: section; 
     padding-left:0rem;
-
-}
-
+    }
 }
 
 .booking__steps li{
     transition:all 200ms ease-in;
-    min-width: 30%;
-    list-style-type: none;
-    background-color: #F2F2F2;
+    min-width:30%;
+    list-style-type:none;
+    background-color:#F2F2F2;
     border-radius:1.8rem;
-    @include card-shadow;
+    @include flex-center;
     padding:1rem;
     flex-grow:1;
-    display: flex;
-    align-items: center;
     gap:0.6rem;
+    @include card-shadow;
     @media (max-width:$breakpoint-mobile){
         width:100%;
-    }
-    @media(max-width:$breakpoint-tablet){
-
     }
     &::before{
         counter-increment: section; 
@@ -69,7 +58,7 @@
                 color:$primary-color;
             }
         }
-    }
+}
 
 .booking__steps i{
     color:$dark-gray;

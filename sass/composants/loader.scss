@@ -1,4 +1,4 @@
-.loader{
+.homepage__loader{
     height:100vh;
     position:fixed;
     inset:0;
@@ -9,11 +9,10 @@
     animation: pop-up_out 1s ease-in 3s;
     animation-fill-mode:forwards;
     animation-delay:1s;
-    display:flex;
     justify-content: center;
-    align-items: center;
+    @include flex-center;
     opacity:0.8;
-    & .spin{
+    .homepage__loader--spin{
         border-radius: 50%;
         width: 120px;
         height: 120px;
@@ -26,9 +25,14 @@
 }
 
 @keyframes spin{
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
 @keyframes pop-up_out{
     0%{
         transform:scale(1);
