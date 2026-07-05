@@ -1,0 +1,74 @@
+.booking{
+    padding-left:6rem;
+    padding-right:6rem;
+    @media (max-width:$breakpoint-mobile),(max-width:$breakpoint-tablet){
+        padding-left:2rem;
+        padding-right:2rem;
+    }
+}
+
+.booking h2{
+    padding-left:2rem;
+}
+
+.booking__steps{
+    & ol{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    gap:2rem;
+    counter-reset: section; 
+    padding-left:0rem;
+    }
+}
+
+.booking__steps li{
+    transition:all 200ms ease-in;
+    min-width:30%;
+    list-style-type:none;
+    background-color:#F2F2F2;
+    border-radius:1.8rem;
+    @include flex-center;
+    padding:1rem;
+    flex-grow:1;
+    gap:0.6rem;
+    @include card-shadow;
+    @media (max-width:$breakpoint-mobile){
+        width:100%;
+    }
+    &::before{
+        counter-increment: section; 
+        content: counters(section,".") " ";
+        border:1px solid white;
+        border-radius: 50%;
+        height:1rem;
+        width:1rem;
+        background-color:$primary-color;
+        color:white;
+        padding:0.4rem;
+        margin-left:-1.5rem;
+        display:flex;
+        justify-content: center;
+        }
+        &:hover{
+            transform:scale(1.1);
+            cursor: pointer;
+            background:$light-purple;
+            i{
+                color:$primary-color;
+            }
+        }
+}
+
+.booking__steps i{
+    color:$dark-gray;
+    font-size:1.3rem;
+    .fa-solid{ 
+        margin-right:0.5rem;
+    }
+}
+
+.booking__steps span{
+    font-weight:bold;
+    font-size:1rem;
+}

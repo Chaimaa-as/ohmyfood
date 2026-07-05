@@ -1,0 +1,88 @@
+.menu__item{
+    background-color: white;
+    border-radius:1rem;
+    @include card-shadow;
+    display:flex;
+    cursor:pointer;
+    margin:0.4rem;
+    overflow:hidden;
+    animation:fade-in 200ms ease-in;
+    animation-fill-mode: both;
+    transition:all 200ms ease-in-out;
+    width:30%;
+    @media(max-width:$breakpoint-mobile){
+        width:100%;
+    }
+    @for $i from 1 through 3{
+        &:nth-child(#{$i}){
+            animation-delay: #{$i*0.200ms};
+            transition:all 200ms ease-in-out;
+        }
+    }
+    &:hover{
+        .item--check{
+            margin-right:0;
+            & i{
+                transform: rotate(1turn);
+            }
+        }
+    }   
+}
+
+
+@keyframes fade-in{
+    0%{
+        transform:translateY(50%);
+        opacity:0;
+    } 
+    100%{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.item__content{
+    padding:1rem;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    width:60%;
+    & h3, & p{
+        padding:0;
+        margin:0;
+        overflow:hidden;
+        text-overflow: ellipsis;   
+        white-space:nowrap;
+    }
+}
+
+.item__price{
+    font-size:0.9rem;
+    margin-left:auto;
+    font-weight: bold;
+    display:flex;
+    align-items: flex-end;
+    padding:1rem;
+    min-width:10%;
+}
+
+.item--check{
+    width: 4rem;
+    color: #99E2D0;
+    justify-content: center;
+    background-color: $tertiary-color;
+    border-radius: 0rem 1rem 1rem 0rem;
+    margin-right:-4rem;
+    overflow: hidden;
+    transition:all 300ms;
+    @include flex-center;
+    & i{
+        border-radius: 50%;
+        color: $tertiary-color;
+        background-color: white;
+        width:1.1rem;
+        display: flex;
+        justify-content: center;
+        transition:all 300ms ease-in-out;
+    }
+}

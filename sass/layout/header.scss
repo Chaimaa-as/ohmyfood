@@ -1,0 +1,12 @@
+/* HEADER */
+header{
+    padding-top:1rem;
+    padding-bottom:0.4rem;
+    text-align: center;
+    position: relative;
+}
+
+.homepage-header{
+    @include card-shadow;
+}
+

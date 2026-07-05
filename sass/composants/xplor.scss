@@ -1,0 +1,39 @@
+// <!-- EXPLORATION SECTION -- S1 -->
+.xplor{
+    background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
+    padding-bottom: 4rem;
+    @media (max-width:$breakpoint-mobile),(max-width:$breakpoint-tablet){
+           padding-left:0;
+           padding-right:0; 
+           margin-bottom:0;
+        }
+}
+
+.xplor__location{
+    @include flex-center;
+    justify-content: center;
+    gap:0.5rem;
+    font-size:1.2rem;
+    font-weight: bold;
+    color:$dark-gray;
+    background-color: $light-gray;
+}
+
+.xplor__title{
+    text-align: center;
+    padding:4rem 1.4rem 0rem 1.4rem;
+    @include flex-center;
+    flex-direction: column;
+}
+
+.xplor__title h1{
+    margin:0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2rem;
+}
+
+.xplor__title p{
+    font-weight:350;
+    font-size:1.1rem;
+}

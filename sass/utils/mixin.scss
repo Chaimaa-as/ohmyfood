@@ -1,0 +1,15 @@
+@mixin card-shadow{
+    -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsl(0deg 0% 0% / 20%);
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin btn-start{
+    background-image: linear-gradient(to right bottom, rgba(255,121,217,1) 0%, rgba(147,86,220,1) 100%);
+}
+@mixin btn-end{
+    background-image: linear-gradient(to right bottom, rgba(255,121,217,0.5) 0%, rgba(147,86,220,0.5) 100%);
+}

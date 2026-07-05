@@ -1,0 +1,653 @@
+@charset "UTF-8";
+/* GENERAL */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+/* BUTTONS */
+.xplor__button {
+  border: none;
+  border-radius: 2rem;
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+  height: 3rem;
+  width: 14rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 450;
+  padding: 0.7rem 1.4rem;
+  margin-top: 2rem;
+  text-align: center;
+  background: rgb(255, 121, 217);
+  background-image: linear-gradient(to right bottom, rgb(255, 121, 217) 0%, rgb(147, 86, 220) 100%);
+}
+.xplor__button span {
+  font-size: 1rem;
+}
+.xplor__button:hover {
+  transform: scale(1.1);
+  transition: all 200ms ease-in;
+  background: rgb(255, 121, 217);
+  background-image: linear-gradient(to right bottom, rgb(255, 121, 217) 0%, rgb(147, 86, 220) 100%);
+  cursor: pointer;
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.4);
+}
+
+.heart::before {
+  display: block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 1.8rem;
+  position: absolute;
+  right: 2rem;
+  transform: translate(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+.heart::after {
+  display: block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 1.8rem;
+  position: absolute;
+  right: 2rem;
+  transform: translate(-50%);
+  color: transparent;
+  background: linear-gradient(to right bottom, #ff79d9, #e96eda, #d064db, #b35cdc, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  animation: heart-filling;
+}
+.heart:hover::after {
+  opacity: 1;
+}
+
+.rest__heart {
+  width: 2rem;
+  height: 2rem;
+  left: 100%;
+  bottom: 10%;
+  position: absolute;
+}
+
+.rest-page__heart {
+  width: 2rem;
+}
+
+@keyframes heart-filling {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  17% {
+    transform: scaleY(0.18);
+  }
+  25% {
+    transform: scaleY(0.4);
+  }
+  46% {
+    transform: scaleY(0.81);
+  }
+  70% {
+    opacity: 0.7;
+  }
+  85%, 100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+.homepage__loader {
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: #EFEFEF;
+  border: 6px solid #FF79DA;
+  z-index: 2;
+  opacity: 1;
+  animation: pop-up_out 1s ease-in 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+}
+.homepage__loader .homepage__loader--spin {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border-top: 16px solid #9356DC;
+  border-right: 16px solid #FF79DA;
+  border-bottom: 16px solid #99E2D0;
+  border-left: 16px solid #383838;
+  animation: spin 3s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pop-up_out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.menu__item {
+  background-color: white;
+  border-radius: 1rem;
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+  display: flex;
+  cursor: pointer;
+  margin: 0.4rem;
+  overflow: hidden;
+  animation: fade-in 3s ease-in;
+  animation-fill-mode: both;
+  transition: all 1s ease-in-out;
+  width: 30%;
+}
+@media (max-width: 700px) {
+  .menu__item {
+    width: 100%;
+  }
+}
+.menu__item:nth-child(1) {
+  animation-delay: 0.5s;
+  transition: all 300ms ease-in-out;
+}
+.menu__item:nth-child(2) {
+  animation-delay: 1s;
+  transition: all 300ms ease-in-out;
+}
+.menu__item:nth-child(3) {
+  animation-delay: 1.5s;
+  transition: all 300ms ease-in-out;
+}
+.menu__item:hover .item--check {
+  margin-right: 0;
+}
+.menu__item:hover .item--check i {
+  transform: rotate(1turn);
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.item__content {
+  padding: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60%;
+}
+.item__content h3, .item__content p {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item__price {
+  font-size: 0.9rem;
+  margin-left: auto;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  min-width: 10%;
+}
+
+.item--check {
+  width: 4rem;
+  color: #99E2D0;
+  justify-content: center;
+  background-color: #99E2D0;
+  border-radius: 0rem 1rem 1rem 0rem;
+  margin-right: -4rem;
+  overflow: hidden;
+  transition: all 500ms;
+  display: flex;
+  align-items: center;
+}
+.item--check i {
+  border-radius: 50%;
+  color: #99E2D0;
+  background-color: white;
+  width: 1.1rem;
+  display: flex;
+  justify-content: center;
+  transition: all 500ms ease-in-out;
+}
+
+.rests-results {
+  background-color: #f2f2f2;
+  padding-bottom: 1rem;
+  border-radius: 2rem;
+  margin: 2rem 6rem 2rem 6rem;
+}
+@media (max-width: 700px), (max-width: 900px) {
+  .rests-results {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 2rem 0rem 0rem 0rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.rests-results h2 {
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+.rests-results h3 {
+  margin: 0;
+}
+
+.rests-results-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+  transition: all 200ms ease-in-out;
+}
+
+.rest-card {
+  background-color: white;
+  border-radius: 1.3rem;
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+  min-width: 40%;
+  position: relative;
+  transition: all 200ms ease-in-out;
+}
+@media (max-width: 700px), (max-width: 900px) {
+  .rest-card {
+    width: 100%;
+  }
+}
+.rest-card:hover {
+  transform: scale(1.1);
+}
+.rest-card .rest-card--new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 6rem;
+  color: green;
+  background-color: #99E2D0;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+}
+
+.rest-card img {
+  width: 100%;
+  height: 10rem;
+  border-radius: 1.3rem 1.3rem 0rem 0rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.rest__content {
+  padding: 0.4rem 0.6rem 1rem 1rem;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.rest__content p {
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+}
+
+.booking {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+@media (max-width: 700px), (max-width: 900px) {
+  .booking {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.booking h2 {
+  padding-left: 2rem;
+}
+
+.booking__steps ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  counter-reset: section;
+  padding-left: 0rem;
+}
+
+.booking__steps li {
+  transition: all 200ms ease-in;
+  min-width: 30%;
+  list-style-type: none;
+  background-color: #F2F2F2;
+  border-radius: 1.8rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  flex-grow: 1;
+  gap: 0.6rem;
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+}
+@media (max-width: 700px) {
+  .booking__steps li {
+    width: 100%;
+  }
+}
+.booking__steps li::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background-color: #9356DC;
+  color: white;
+  padding: 0.4rem;
+  margin-left: -1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.booking__steps li:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background: #F4EEFB;
+}
+.booking__steps li:hover i {
+  color: #9356DC;
+}
+
+.booking__steps i {
+  color: #383838;
+  font-size: 1.3rem;
+}
+.booking__steps i .fa-solid {
+  margin-right: 0.5rem;
+}
+
+.booking__steps span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.xplor {
+  background-image: linear-gradient(to top, #f5f5f5, #f7f7f7, #fafafa, #fcfcfc, #ffffff);
+  padding-bottom: 4rem;
+}
+@media (max-width: 700px), (max-width: 900px) {
+  .xplor {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+.xplor__location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #383838;
+  background-color: #EFEFEF;
+}
+
+.xplor__title {
+  text-align: center;
+  padding: 4rem 1.4rem 0rem 1.4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.xplor__title h1 {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2rem;
+}
+
+.xplor__title p {
+  font-weight: 350;
+  font-size: 1.1rem;
+}
+
+/* HEADER */
+header {
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
+  text-align: center;
+  position: relative;
+}
+
+.homepage-header {
+  -webkit-box-shadow: -0.125rem 0.375rem 0.625rem hsla(0deg, 0%, 0%, 0.2);
+}
+
+footer {
+  padding: 1rem;
+  background-color: #383838;
+  z-index: -1;
+}
+footer ul {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: space-around;
+  padding-left: 0;
+}
+@media (max-width: 700px) {
+  footer ul {
+    flex-direction: column;
+    display: flex;
+    gap: 0.4rem;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+}
+footer h2 {
+  padding: 0;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: "Shrikhand", cursive;
+}
+footer li {
+  list-style: none;
+  color: white;
+  padding-bottom: 0.3rem;
+}
+
+.footer-bloc {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-bloc i {
+  width: 0.5rem;
+}
+.footer-bloc p {
+  margin: 0rem;
+}
+
+nav a {
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+nav a::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1.25em;
+  text-align: center;
+  width: 4rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 2rem;
+  content: "\f060";
+  cursor: pointer;
+}
+
+.restaurant-pic img {
+  display: block;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
+}
+
+.restaurant-menu {
+  margin-top: -3rem;
+  z-index: 1;
+  background-color: #EFEFEF;
+  padding: 3rem 2rem;
+  border-radius: 2rem 2rem 0rem 0rem;
+}
+@media (max-width: 700px) {
+  .restaurant-menu {
+    width: 100%;
+    transform: translate(0%);
+    border-radius: 2rem 2rem 0rem 0rem;
+    margin-bottom: 0;
+  }
+}
+.restaurant-menu .restaurant__title {
+  display: flex;
+}
+.restaurant-menu h1 {
+  padding-left: 0.4rem;
+  font-size: 1.5rem;
+  font-family: "Shrikhand", cursive;
+  margin: 0;
+}
+.restaurant-menu h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #383838;
+  font-size: 1.2rem;
+}
+.restaurant-menu h3 {
+  font-size: 1rem;
+}
+.restaurant-menu p {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.starters h2::after,
+.main-courses h2::after,
+.deserts h2::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 2px;
+  background-color: #99E2D0;
+}
+
+.menu-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/**
+ * CONTENTS
+ *
+ *
+ * BASE/GENERAL
+ * Box-sizing...........Better default `box-sizing`.
+ * Headings.............H1–H6 styles.
+ *
+ * COMPOSANTS
+ * Booking steps........Numbered booking steps.
+ * Buttons..............Button styling & animation.
+ * Heart................Heart animation.
+ * Loader...............The main page loader spinner.
+ * Menu-item............Cards styling & animations.
+ * Results..............Restaurants slides styling.
+ * Xplor................General Presentation.
+ *
+ * LAYOUT
+ * Header...............The main page header.
+ * Main.................The main section.
+ * Footer...............The main page footer.
+ *
+ * PAGES
+ * Pages................Restaurants pages styling.
+ *
+ * UTILS
+ * Mixins...............Useful mixins.
+ * Variables............Globally-available variables
+ *
+ *
+ **/
+
+/*# sourceMappingURL=style.css.map */
